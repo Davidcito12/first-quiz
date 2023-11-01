@@ -24,7 +24,10 @@ import pets_db
 
 sql_pets_owned_by_nobody = """
 
-Your SQL here.
+SELECT name,species,age from animals 
+where animal_id not in(
+	SELECT pet_id FROM people_animals
+) 
 
 """
 
